@@ -1,0 +1,234 @@
+/* Réinitialisation des styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Couleurs principales */
+:root {
+    --main-color: #1ABC9C;  /* Vert turquoise */
+    --dark-color: #2C3E50;
+    --light-bg: #f8f9fa;
+    --text-color: #333;
+}
+
+/* Style général du corps */
+body {
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Style du header */
+header {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 80px;
+    z-index: 100; 
+    background-color: #333;
+    padding: 20px;
+}
+
+/* Menu burger */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    position: absolute; 
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Transformation du burger en croix */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: rotate(45deg) translateY(14px); /
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0; 
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translateY(-14px);
+}
+
+/* Menu */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* Style des liens */
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: var(--main-color);
+    color: white;
+}
+
+/* Ajustement pour éviter que le header cache le contenu */
+main {
+    max-width: 1000px;
+    margin: 160px auto 40px; 
+    padding: 20px;
+}
+
+/* Style des sections */
+section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Style des titres */
+h1 {
+    text-align: center;
+    font-size: 2.2em;
+    color: var(--dark-color);
+    margin-top: 40px; /* Ajout de marge pour ne pas être caché */
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Ligne décorative sous les titres */
+h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--main-color);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Alignement et style du texte */
+p {
+    text-align: justify;  /* Texte justifié pour un rendu plus professionnel */
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* Image de profil */
+.profile-pic {
+    display: block;
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style du footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--dark-color);
+    color: white;  /* Texte blanc */
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Centrage et couleur du texte "Tous droits réservés" */
+footer p {
+    text-align: center;
+    color: white !important;  /* Assure que le texte est bien blanc */
+    font-weight: bold;
+}
+
+/* Alignement de l'en-tête */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.accueil {
+    text-align: center;
+}
+
+.profile-pic {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.contact-icons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-icons svg {
+    color: white;
+    margin: 10px;
+}
+
+.contact-icons svg:hover {
+    transform: scale(1.5);
+    transition: transform 0.3s ease;
+}
+
+
+/* Affichage du menu burger sur mobile */
+@media (max-width: 768px) {
+    header {
+        justify-content: flex-start; /* Garde le burger aligné à gauche par défaut */
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
