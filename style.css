@@ -133,7 +133,7 @@ h1::after {
 /* Alignement et style du texte */
 p {
     text-align: left;  /* Texte justifié pour un rendu plus professionnel */
-    font-size: 1.1em;
+    font-size: 16px;
     color: var(--text-color);
 }
 
@@ -215,7 +215,6 @@ footer p {
     .menu {
         display: none;
         flex-direction: column;
-        width: 100%;
         background-color: #333;
     }
 
