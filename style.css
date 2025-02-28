@@ -132,7 +132,7 @@ h1::after {
 
 /* Alignement et style du texte */
 p {
-    text-align: justify;  /* Texte justifié pour un rendu plus professionnel */
+    text-align: left;  /* Texte justifié pour un rendu plus professionnel */
     font-size: 1.1em;
     color: var(--text-color);
 }
